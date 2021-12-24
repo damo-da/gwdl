@@ -19,29 +19,35 @@ non-overlapping timestamps.
 >>> X = event_epochs + noise_epochs
 ```
 
-`X[0]` contains H1 strain cropped to [-16s, +16s] around catalouged timestamp
-`X[1]` contains H1 strain cropped to [-16s, +16s] around catalouged timestamp
+`X[0]` contains H1 strain cropped to [-16s, +16s] around catalouged timestamp.
+`X[1]` contains L1 strain cropped to [-16s, +16s] around catalouged timestamp.
 
 ```
 >>> X[0][0].sample_rate
 4096Hz
 >>> len(X[0][0])
 131072
->>>
 ```
 
 ## Procedure
 
 On Notebook [1](./1-catalog.ipynb), we download these events from H1 (LIGO Hanford) and L1 (LIGO Livingston)
 interferometers at 4096 Hz and trim them to [-16s, 16s] around their event timestamps.
-On Notebook [2](./2-noise.ipynb), we will generate noise strains. Then, finally on Notebook ![3][./3-classification.ipynb],
+On Notebook [2](./2-noise.ipynb), we will generate noise strains. Then, finally on Notebook ![3](./3-classification.ipynb),
 we will build a machine learning pipeline involving signal processing (Whitening + bandpass at 30-400 Hz),
 feature extraction using CSP, and different classifier pipelines and run them using _nxk_ cross-validation over
 21 sliding windows (length 0.3s, jump 0.1s, start=-1s).
 
 ## Result
 
-Finally, we will evaluate the performance of each of these algorithms.
+Finally, we will evaluate the performance of multiple classification pipelines.
+
+1. `csp_svm` (Signal Filter + CSP + Support Vector Machine)
+2. `csp_svm_nosigfilt` (CSP + SVM)
+3. `csp_lda` (Signal Filter + CSP + Linear Descriminant Analysis)
+4. `csp_lda_nosigfilt` (CSP + Linear Descriminant Analysis)
+
+### Comparison
 
 ![Classification scores](./screenshots/class_acc.jpg)
 
@@ -54,8 +60,7 @@ Peak classification accuracy using csp_lda_nosigfilt: 0.46750793650793654
 
 ```
 
-The peak classification accuracy was given by `csp_svm` at 85.29%. This pipeline utilized signal
-filtering (whitening and 30-400Hz bandpass), followed by Common Spatial Patterns (ndimensions = auto).
+The peak classification accuracy was given by `csp_svm` at 85.29%.
 
 ## Packages used
 
