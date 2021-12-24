@@ -43,7 +43,7 @@ and different classifier pipelines and run them using _nxk_ cross-validation ove
 
 Finally, we will evaluate the performance of each of these algorithms.
 
-![Classification scores][./screenshots/class_acc.png]
+![Classification scores](./screenshots/class_acc.png)
 
 ```
 
