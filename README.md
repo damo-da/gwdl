@@ -30,10 +30,6 @@ non-overlapping timestamps.
 >>>
 ```
 
-> > > X[0]
-
-```
-
 ## Procedure
 
 On [1], we download these events from H1 (LIGO Hanford) and L1 (LIGO Livingston)
@@ -62,17 +58,21 @@ The peak classification accuracy was given by `csp_svm` at 85.29%. This pipeline
 filtering (whitening and 30-400Hz bandpass), followed by Common Spatial Patterns (ndimensions = auto).
 
 ## Packages used
-* `sklearn`
-* `gwpy`
-* `gwosc`
-* `mne` (for CSP)
-* `pandas`
-* `numpy`
-* `matplotlib`
+
+- `sklearn`
+- `gwpy`
+- `gwosc`
+- `mne` (for CSP)
+- `pandas`
+- `numpy`
+- `matplotlib`
 
 ## Authorship/Credits
 
 Damodar Dahal <damodar.dahal@selu.edu> <damodar.dahal@anthem.com>
 
 LIGO Strain Data provided by GWOSC (https://gw-openscience.org)
+
+```
+
 ```
