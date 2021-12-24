@@ -72,7 +72,3 @@ filtering (whitening and 30-400Hz bandpass), followed by Common Spatial Patterns
 Damodar Dahal <damodar.dahal@selu.edu> <damodar.dahal@anthem.com>
 
 LIGO Strain Data provided by GWOSC (https://gw-openscience.org)
-
-```
-
-```
