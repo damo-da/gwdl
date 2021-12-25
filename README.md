@@ -33,10 +33,15 @@ non-overlapping timestamps.
 
 On Notebook [1](./1-catalog.ipynb), we download these events from H1 (LIGO Hanford) and L1 (LIGO Livingston)
 interferometers at 4096 Hz and trim them to [-16s, 16s] around their event timestamps.
-On Notebook [2](./2-noise.ipynb), we will generate noise strains. Then, finally on Notebook ![3](./3-classification.ipynb),
-we will build a machine learning pipeline involving signal processing (Whitening + bandpass at 30-400 Hz),
-feature extraction using CSP, and different classifier pipelines and run them using 10x5 cross-validation over
-21 sliding windows (length 0.3s, jump 0.1s, start=-1s).
+
+On Notebook [2](./2-noise.ipynb), we will generate noise strains.
+
+On Notebook ![3](./3-classification.ipynb), we will build a machine learning pipeline involving signal
+processing (Whitening + bandpass at 30-400 Hz), feature extraction using CSP, and different classifier
+pipelines and run them using 10x5 cross-validation over 21 sliding windows (start=-1.0s, length=0.3s,
+jump=0.1s). We compute the classification accuracy.
+
+On Notebook [4], we analyze the classification accuracy and evaluate the performance of our best classifier.
 
 ## Result
 
@@ -62,6 +67,16 @@ Peak classification accuracy using csp_lda_nosigfilt: 0.46750793650793654
 
 The peak classification accuracy was given by `csp_svm` at 85.29%.
 
+### Analyzing down classification accuracy
+
+When plotting the SNRs and prediction of the events (coalescenses), we get the following
+diagram.
+
+![Classification scores](./screenshots/class_acc.jpg)
+
+Clearly, the errors of our classifier are for events with SNR <= 11. This will the
+continuated line of study in our work.
+
 ## Packages used
 
 - `sklearn`
@@ -71,6 +86,7 @@ The peak classification accuracy was given by `csp_svm` at 85.29%.
 - `pandas`
 - `numpy`
 - `matplotlib`
+
 
 ## Authorship/Credits
 
