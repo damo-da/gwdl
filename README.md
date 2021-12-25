@@ -78,6 +78,13 @@ diagram.
 Clearly, the errors of our classifier are for events with SNR <= 11. This will the
 continuated line of study in our work.
 
+#### Plotting the sensitivity against SNRs
+
+We plot the sensitivity of the `csp_svm` classifier against SNRs for catalouged events provided by
+GWOSC, rounded to nearest integer.
+
+![Sensitivity against SNR](./screenshots/sensitivity-snr.jpg)
+
 ## Packages used
 
 - `sklearn`
