@@ -73,7 +73,7 @@ The peak classification accuracy was given by `csp_svm` at 85.29%.
 When plotting the SNRs and prediction of the events (coalescenses), we get the following
 diagram.
 
-![Classification scores](./screenshots/class_acc.jpg)
+![Classification scores](./screenshots/snr_pred.jpg)
 
 Clearly, the errors of our classifier are for events with SNR <= 11. This will the
 continuated line of study in our work.
