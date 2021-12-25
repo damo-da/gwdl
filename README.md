@@ -41,7 +41,8 @@ processing (Whitening + bandpass at 30-400 Hz), feature extraction using CSP, an
 pipelines and run them using 10x5 cross-validation over 21 sliding windows (start=-1.0s, length=0.3s,
 jump=0.1s). We compute the classification accuracy.
 
-On Notebook [4], we analyze the classification accuracy and evaluate the performance of our best classifier.
+On Notebook ![4](./4-breaking-class-results.ipynb), we analyze the classification accuracy and evaluate
+the performance of our best classifier.
 
 ## Result
 
